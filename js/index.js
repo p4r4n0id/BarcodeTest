@@ -71,6 +71,7 @@ var app = {
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
             window.plugins.ChildBrowser.showWebPage('https://apex.mt-ag.com/pls/apex/f?p=205:2:0::::P2_PDT_EAN:'+result.text, { showLocationBar: true });
+            
              //window.location = 'https://apex.mt-ag.com/pls/apex/f?p=205:2:0::::P2_PDT_EAN:'+result.text;
             //window.location.href = "https://apex.mt-ag.com/pls/apex/f?p=205:2:0::::P2_PDT_EAN:"+result.text;
             //document.getElementById("info").innerHTML = result.text;
