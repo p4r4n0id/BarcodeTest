@@ -70,8 +70,12 @@ var app = {
                 "text: " + result.text + "\n" +
                 "format: " + result.format + "\n" +
                 "cancelled: " + result.cancelled + "\n");
-            window.plugins.ChildBrowser.showWebPage('https://apex.mt-ag.com/pls/apex/f?p=205:2:0::::P2_PDT_EAN:'+result.text, { showLocationBar: true });
-            
+           // window.plugins.ChildBrowser.showWebPage('https://apex.mt-ag.com/pls/apex/f?p=205:2:0::::P2_PDT_EAN:'+result.text, { showLocationBar: true });
+             var ref = window.open('https://apex.mt-ag.com/pls/apex/f?p=205:2:0::::P2_PDT_EAN:'+result.text, '_blank', 'location=yes');
+         ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+         ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         ref.addEventListener('exit', function(event) { alert(event.type); });
              //window.location = 'https://apex.mt-ag.com/pls/apex/f?p=205:2:0::::P2_PDT_EAN:'+result.text;
             //window.location.href = "https://apex.mt-ag.com/pls/apex/f?p=205:2:0::::P2_PDT_EAN:"+result.text;
             //document.getElementById("info").innerHTML = result.text;
